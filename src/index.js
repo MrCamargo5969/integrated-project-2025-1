@@ -1,6 +1,11 @@
 const express = require('express');
 const path = require('path');
+const http = require('http');
+const WebSocket = require('ws');
+
 const app = express();
+const server = http.createServer(app);
+const wss = new WebSocket.Server({server});
 const port = 8080;
 
 
@@ -14,12 +19,22 @@ app.get('/',(req, res)=>{
     res.sendFile(path.join(__dirname, '..','public', 'index.html'));
 });
 
-app.get('/api/data', (req, res) => {
-    const dadoDinamico = {
-        temperatura: (Math.random() * 10 + 20).toFixed(2)
-    };
-    res.json(dadoDinamico);
+wss.on('connection', (ws) =>{
+    console.log("Client´s connection",+ws.id);
+
+    ws.on('message', (message) =>{
+        wss.clients.forEach((client) =>{
+            if (client.readyState === WebSocket.OPEN){
+                client.send(message);
+            }
+        });
+    });
+
+    ws.on('close', () =>{
+        console.log("Client´s desconnection")
+    });
 });
+
 
 app.listen(port, ()=>{
     console.log("Server Running at http://localhost:"+port);

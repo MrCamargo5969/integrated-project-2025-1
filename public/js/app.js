@@ -1,15 +1,11 @@
+const socket = new WebSocket("ws://192.168.20.201:8080");
 
-const temp = document.getElementsByTagName("span")
+socket.onmessage = function (event) {
+    const data = JSON.parse(event.data);
+    console.log('Temperatura recebida:', data.temperatura);
+    document.getElementById("temperatura").textContent = data.temperatura;
+};
 
-async function fetchData() {
-    const data = await fetch('http://localhost:8080/api/data')
-    if (data.status === 200){
-        const response = await data.json()
-        temp[0].textContent = response['temperatura'];
-        console.log(response['temperatura']);
-        console.log(temp[0].textContent);
-    }
-}
-
-fetchData();
-setInterval(fetchData, 5000);
+socket.onerror = function (error) {
+    console.error("Erro na conexão WebSocket:", error);
+};
