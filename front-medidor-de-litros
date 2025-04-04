@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Volume de Água</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .bar-container {
+            height: 200px; /* Altura máxima da barra */
+            width: 50px; /* Largura da barra */
+            background-color: #eee;
+            border-radius: 5px;
+            margin: 20px auto; /* Centraliza a barra */
+            position: relative; /* Necessário para o posicionamento absoluto da barra interna */
+        }
+        .bar {
+            width: 100%; /* Mantém a largura da barra no contêiner */
+            background-color: #4CAF50;
+            border-radius: 5px;
+            position: absolute; /* Para permitir a movimentação vertical */
+            bottom: 0; /* Inicia na parte inferior */
+            text-align: center;
+            color: white;
+            transition: height 0.3s; /* Animação suave ao mudar a altura */
+        }
+    </style>
+</head>
+<body>
+    <h1>Volume de Água em litros</h1>
+    <div class="bar-container">
+        <div class="bar" id="waterBar" style="height: 0%;">0 L</div>
+    </div>
+
+    <script>
+        function simulateArduinoData() {
+            // Gera um valor aleatório entre 0 e 2 litros
+            const volume = (Math.random() * 2).toFixed(1); // Gera um valor de 0.0 a 2.0
+            return { volume: parseFloat(volume) }; // Retorna o valor como um objeto
+        }
+
+        function fetchWaterData() {
+            // Simula a busca de dados do Arduino
+            const data = simulateArduinoData();
+            updateBar(data.volume);
+        }
+
+        function updateBar(volume) {
+            const bar = document.getElementById('waterBar');
+            const percentage = (volume / 2) * 100; // Converte litros em porcentagem (0 a 2L)
+
+            if (volume >= 0 && volume <= 2) {
+                bar.style.height = percentage + '%';
+                bar.textContent = volume.toFixed(1) + ' L'; // Mostra com uma casa decimal
+            }
+        }
+
+        // Atualiza a barra a cada 5 segundos
+        setInterval(fetchWaterData, 5000);
+    </script>
+</body>
+</html>
