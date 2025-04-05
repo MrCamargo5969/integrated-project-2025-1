@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(90deg,#00CED1, #DC143C);
+}
+
+.container{
+    background-color: rgba(46, 46, 46, 0.8);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 25px;
+    border-radius: 15px;
+    color: black;
+}
+
+.title{
+    justify-content: center;
+}
+
+.bar-container {
+    height: 200px; /* Altura máxima da barra */
+    width: 50px; /* Largura da barra */
+    background-color: #eee;
+    border-radius: 5px;
+    margin: 20px auto; /* Centraliza a barra */
+    position: relative; /* Necessário para o posicionamento absoluto da barra interna */
+}
+.bar {
+    width: 100%; /* Mantém a largura da barra no contêiner */
+    background-color: #9ed670;
+    border-radius: 5px;
+    position: absolute; /* Para permitir a movimentação vertical */
+    bottom: 0; /* Inicia na parte inferior */
+    text-align: center;
+    color: black;
+    transition: height 0.3s; /* Animação suave ao mudar a altura */
+}

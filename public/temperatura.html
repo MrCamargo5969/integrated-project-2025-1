@@ -4,21 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Termometro</title>
-    <style>
-        body {
-            background-color: black;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            color: white;
-            font-size: 2rem;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <script src="\js\app.js"></script>
-    <h1>Temperatura Atual: <span class="data">0.0</span> °C</h1>
+    <h1>Volume de Água em litros</h1>
+    <div class="bar-container">
+        <div class="bar" id="waterBar" style="height: 0%;"><slot>0</slot> L</div>
+    </div>
     
+    <script src="/js/app.js"></script>
 </body>
 </html>

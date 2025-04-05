@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>Node-Test</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+    <title>Medidor de Nivel</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <div class="gauge">
-        <div class="gauge__body">
-            
+    <div class="container">
+        <h1 class="title">Volume (L)</h1>
+        <div class="bar-container">
+            <div class="bar" id="waterBar" style="height: 0%;"><slot>0</slot> L</div>
         </div>
     </div>
+
+    
+    <script src="/js/app.js"></script>
 </body>
 </html>

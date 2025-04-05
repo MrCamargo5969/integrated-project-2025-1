@@ -1,10 +1,12 @@
-### Enviar temperatura para o servidor (simulando o Arduino)
-POST http://localhost:3000/api/data
+@url = http://localhost:3000
+
+GET {{url}}/api/data
+###
+
+
+POST {{url}}/api/data
 Content-Type: application/json
 
 {
-    "temperatura": "27.3"
+    "value" : "0.8"
 }
-
-### Obter a temperatura armazenada no servidor
-GET http://localhost:3000/api/data
