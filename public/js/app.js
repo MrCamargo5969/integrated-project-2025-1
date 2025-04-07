@@ -1,7 +1,7 @@
 const bar = document.getElementById("waterBar");
 
 async function fetchData() {
-    const data = await fetch('http://integrated-project-2025-1.vercel.app/api/data') //Substitua o IP aqui para poder rodar local
+    const data = await fetch('http://integrated-project-2025-1-production.up.railway.app/api/data') //Substitua o IP aqui para poder rodar local
     if (data.status === 200){
         const response = await data.json()
         bar.textContent = response['value'] + ' L';
