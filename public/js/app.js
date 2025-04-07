@@ -1,7 +1,7 @@
 const bar = document.getElementById("waterBar");
 
 async function fetchData() {
-    const data = await fetch('http://192.168.86.7:3000/api/data')
+    const data = await fetch('https://integrated-project-2025-1-4w750twv7.vercel.app/api/data')
     if (data.status === 200){
         const response = await data.json()
         bar.textContent = response['value'] + ' L';
