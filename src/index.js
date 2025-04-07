@@ -31,5 +31,5 @@ app.get('/',(req, res)=>{
 });
 
 app.listen(port, ()=>{
-    console.log("Server Running at https://integrated-project-2025-1.vercel.app:"+port);
+    console.log("Server Running at http://localhost:"+port);
 });
