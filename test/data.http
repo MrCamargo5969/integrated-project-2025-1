@@ -8,5 +8,5 @@ POST {{url}}/api/data
 Content-Type: application/json
 
 {
-    "value" : "0.8"
+    "value" : "1.5"
 }
