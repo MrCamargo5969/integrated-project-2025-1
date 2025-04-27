@@ -26,10 +26,6 @@ app.get('/api/data', (req, res) => {
     res.json({ value: valueAtual });
 });
 
-app.get('/config', (req, res) => {
-    res.json({ localIp });
-});
-
 app.get('/',(req, res)=>{
    res.sendFile(path.join(__dirname, '..','public', 'index.html'));
 });
