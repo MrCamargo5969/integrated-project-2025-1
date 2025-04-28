@@ -1,4 +1,4 @@
-@url = https://integrated-project-2025-1-orcin.vercel.app
+@url = https://integrated-project-2025-1.vercel.app
 # O que colocar aqui em cima?
 
 GET {{url}}/api/data
