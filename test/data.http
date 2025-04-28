@@ -1,4 +1,4 @@
-@url = http://localhost:3000
+@url = https://integrated-project-2025-1-orcin.vercel.app
 # O que colocar aqui em cima?
 
 GET {{url}}/api/data
