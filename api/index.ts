@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.post('/api/data', (req, res) => {
     if (req.body) {
         valueAtual = req.body.value;
-        console.log("Nova temperatura recebida:", valueAtual);
+        console.log("Nova medida recebida:", valueAtual);
         res.status(200).send("Dados recebidos com sucesso");
     } else {
         res.status(400).send("Erro: Nenhuma temperatura foi enviada");
