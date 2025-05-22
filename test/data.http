@@ -1,5 +1,5 @@
-# @url = https://integrated-project-2025-1.vercel.app
-@url = http://localhost:3000
+@url = https://integrated-project-2025-1.vercel.app
+# @url = http://localhost:3000
 
 GET {{url}}/api/data
 ###

@@ -1,5 +1,6 @@
 const bar = document.getElementById("values-display");
 const barHeight = document.getElementById("level");
+
 console.log(barHeight)
 
 async function fetchData() {
